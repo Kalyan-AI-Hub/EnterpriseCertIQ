@@ -1,0 +1,26 @@
+-r requirements.txt
+
+# Azure AI Foundry (cloud backend)
+# Path A (primary): azure-ai-projects v2.x — native Responses/Conversations, A2A,
+#   MCPTool, create_version, AIProjectInstrumentor (v2 absorbs azure-ai-agents).
+# The app auto-detects the installed generation: v2 → native, 1.x → mirror fallback.
+azure-ai-projects>=2.1.0
+azure-ai-inference==1.0.0b9
+azure-cosmos==4.9.0
+azure-identity==1.19.0
+
+# Evaluation + safety
+azure-ai-evaluation==1.3.0
+
+# Azure AI Search (used by Foundry IQ Azure mode via azure-ai-projects)
+azure-search-documents>=11.6.0
+
+# Azure-specific telemetry exporter
+azure-monitor-opentelemetry>=1.6.4
+
+# Secret store
+azure-keyvault-secrets>=4.8.0
+
+# Fabric IQ — SKU-free path via the Lakehouse SQL analytics endpoint (works on the Trial,
+# no data agent / paid F2). Needs the system "ODBC Driver 18 for SQL Server" installed too.
+pyodbc>=5.1.0
